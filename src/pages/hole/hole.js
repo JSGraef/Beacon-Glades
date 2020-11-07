@@ -1,21 +1,20 @@
-import React, { Suspense } from "react"
+import React from "react"
 import { Link } from "gatsby"
-import * as HoleMapList from "../coursemap.js"
+import HoleMap from '../../HoleMap.js'
 
 const getParamFromPathname = pathname =>
   pathname ? pathname.split("/").pop() : 1
 
 const Hole = props => {
   const holeNum = getParamFromPathname(props?.location?.pathname)
-  const HoleMap = HoleMapList[`Hole${holeNum}`]
   return (
-    <Suspense fallback={<div>Loading</div>}>
+    <>
       <div>
         <Link to="/">Home</Link>
       </div>
       <p>Hole {holeNum}</p>
-      <HoleMap />
-    </Suspense>
+      <HoleMap holeNumber={holeNum} />
+    </>
   )
 }
 

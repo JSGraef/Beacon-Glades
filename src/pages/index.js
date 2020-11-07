@@ -1,32 +1,8 @@
-import React, { Suspense } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import { Router } from "@reach/router"
-import Hole from "./hole.js"
-
-const holes = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "10",
-  "11",
-  "12",
-  "13",
-  "14",
-  "15",
-  "16",
-  "17s",
-  "17w",
-  "18s",
-  "18w",
-  "19",
-  "20",
-]
+import Hole from "./hole/hole.js"
+import { holes } from "../constants.js"
 
 export default function Home() {
   return (
