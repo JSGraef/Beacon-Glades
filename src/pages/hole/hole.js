@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import HoleMap from "../../HoleMap.js"
 import Layout from "../../Layout.js"
 
