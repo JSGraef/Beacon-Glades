@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     `gatsby-plugin-emotion`,
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -20,6 +21,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/hole/*`] },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+      },
     },
   ],
 }

@@ -1,36 +1,35 @@
 import React from "react"
-import styled from "@emotion/styled"
-import Navigation from "./Navigation.js"
+import Navigation from "./Navigation"
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  justify-items: start;
-  justify-content: start;
-  align-content: flex-start;
-  height: 90vh;
-  margin: 0;
-  padding: 0;
-`
-
-const Nav = styled.div`
-  list-style-type: none;
-  padding: 12px;
-  margin: 0;
-`
-
-const Map = styled.div`
-  min-height: 100%;
-  width: 100%;
-`
-
-export default function Layout({ children }) {
+export default function Layout(props) {
   return (
-    <Container>
-      <Nav>
-        <Navigation />
-      </Nav>
-      <Map>{children}</Map>
-    </Container>
+    <>
+      <div className="relative bg-repeat bg-gray-50 overflow-hidden h-screen">
+        <div
+          className="hidden sm:block sm:absolute sm:h-full sm:w-full"
+          aria-hidden="true"
+        >
+          <div className="">
+            <svg
+              width="404"
+              height="784"
+              fill="#e1eedd"
+              fillOpacity="0.47"
+              viewBox="0 0 80 80"
+            >
+               <path fillRule="evenodd" d="M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z" />
+            </svg>
+          </div>
+        </div>
+
+        <div className="relative pt-6 pb-16 sm:pb-24">
+          <Navigation />
+
+          <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+            {props.children}
+          </main>
+        </div>
+      </div>
+    </>
   )
 }
