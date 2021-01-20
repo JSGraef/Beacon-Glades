@@ -4,11 +4,11 @@ import Layout from "../Layout.js"
 export default function Information() {
   return (
     <Layout>
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-3 lg:gap-8">
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900">
-              Beacon Glades Information
+              Information
             </h2>
             <p className="mt-4 text-lg text-gray-500">
               Can’t find the answer you’re looking for? Join our{" "}

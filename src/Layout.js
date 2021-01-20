@@ -38,8 +38,7 @@ export default function Layout(props) {
 
       <div className="relative pt-6 pb-16 sm:pb-24">
         <Navigation />
-
-        <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-24">
+        <main className="mt-16 mx-auto max-w-7xl px-4 sm:mt-12">
           {props.children}
         </main>
       </div>
