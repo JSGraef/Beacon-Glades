@@ -1,17 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import logo from './images/beacon_glades_logo2021.jpg'
-console.log(logo)
-
-// import { holes } from "./constants.js"
 
 const Navigation = () => {
-  // return holes.map(num => (
-  //   <li key={num}>
-  //     <Link to={`/hole/${num}`}>Hole {num}</Link>
-  //   </li>
-  // ))
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
       <nav
@@ -23,7 +14,7 @@ const Navigation = () => {
             <Link to='/'>
               <span className="sr-only">Workflow</span>
               <img
-                className="h-8 w-auto sm:h-10"
+                className="h-16 w-auto sm:h-16"
                 src={logo}
                 alt="Logo"
               />
