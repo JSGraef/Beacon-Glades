@@ -3,7 +3,7 @@ import Navigation from "./Navigation"
 
 export default function Layout(props) {
   return (
-    <div className="relative bg-gray-50 overflow-hidden h-screen">
+    <div className="relative bg-gray-50">
       <div
         className="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full"
         aria-hidden="true"
