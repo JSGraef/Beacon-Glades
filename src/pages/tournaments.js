@@ -16,8 +16,11 @@ export default function Tournaments() {
             <dl className="space-y-12">
               <div>
                 <dt className="text-lg leading-6 font-medium text-gray-900">
-                  No upcoming tournaments.
+                  Putting League
                 </dt>
+                <dd className="mt-2 text-base text-gray-500">
+                  League starts Wednesday, January 20, 2021.
+                </dd>
               </div>
             </dl>
           </div>
