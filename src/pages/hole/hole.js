@@ -31,7 +31,7 @@ const Hole = props => {
               <div className="mt-4 invisible lg:visible">
                 <Link
                   to={`/hole/${holes[curHoleIdx - 1]}`}
-                  className="text-base font-medium text-indigo-600 float-left"
+                  className="text-base font-medium text-green-700 float-left"
                   aria-current="page"
                 >
                   <span aria-hidden="true">&larr;</span> Previous hole
@@ -42,7 +42,7 @@ const Hole = props => {
               <div className="mt-4 invisible lg:visible">
                 <Link
                   to={`/hole/${holes[curHoleIdx + 1]}`}
-                  className="text-base font-medium text-indigo-600 float-right"
+                  className="text-base font-medium text-green-700 float-right"
                   aria-current="page"
                 >
                   Next hole <span aria-hidden="true">&rarr;</span>{" "}
@@ -54,7 +54,7 @@ const Hole = props => {
               <h2 className="text-4xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
                 {holeData[0]?.title || "Untitled"}
               </h2>
-              <h3 className="text-green-600 font-bold text-lg mt-1">
+              <h3 className="text-indigo-600 font-bold text-lg mt-1">
                 Sponsor: {holeData[0]?.sponsor || "N/A"}
               </h3>
             </div>
