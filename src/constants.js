@@ -23,4 +23,38 @@ const holes = [
   "20",
 ]
 
-export { holes }
+const holeInfo = [
+  { holeNum: "1", teepad: "Regular", par: 3, distance: "355 ft", sponsor: 'John Placeholder', title: 'Grapes of Wrath' },
+  { holeNum: "1", teepad: "Short", par: 3, distance: "267 ft", sponsor: 'John Placeholder', title: 'Grapes of Wrath' },
+  { holeNum: "2", teepad: "Regular", par: 3, distance: "365 ft", sponsor: 'John Placeholder', title: 'Outside the Pines' },
+  { holeNum: "3", teepad: "Summer", par: 3, distance: "267 ft", sponsor: 'John Placeholder', title: 'Tunnel Vision' },
+  { holeNum: "3", teepad: "Winter", par: 3, distance: "287 ft", sponsor: 'John Placeholder', title: 'Tunnel Vision' },
+  { holeNum: "3", teepad: "Long", par: 3, distance: "313 ft", sponsor: 'John Placeholder', title: 'Tunnel Vision' },
+  { holeNum: "4", teepad: "Regular", par: 3, distance: "205 ft", sponsor: 'John Placeholder', title: 'The Haunted Camp' },
+  { holeNum: "4", teepad: "App", par: 3, distance: "203 ft", sponsor: 'John Placeholder', title: 'The Haunted Camp' },
+  { holeNum: "5", teepad: "Regular", par: 3, distance: "287 ft", sponsor: 'John Placeholder', title: 'Mini Mt Beacon' },
+  { holeNum: "5", teepad: "Short", par: 3, distance: "271 ft", sponsor: 'John Placeholder', title: 'Mini Mt Beacon' },
+  { holeNum: "6", teepad: "A", par: 3, distance: "240 ft", sponsor: 'John Placeholder', title: 'A Walk in the Woods' },
+  { holeNum: "6", teepad: "B", par: 3, distance: "220 ft", sponsor: 'John Placeholder', title: 'A Walk in the Woods' },
+  { holeNum: "6", teepad: "Long", par: 4, distance: "400 ft", sponsor: 'John Placeholder', title: 'A Walk in the Woods' },
+  { holeNum: "7", teepad: "Regular", par: 3, distance: "248 ft", sponsor: 'John Placeholder', title: 'Watertank Down' },
+  { holeNum: "8", teepad: "Regular", par: 3, distance: "225 ft", sponsor: 'John Placeholder', title: 'The Trailhead' },
+  { holeNum: "9", teepad: "Regular", par: 3, distance: "233 ft", sponsor: 'John Placeholder', title: 'R.I.P. 3 Stooges' },
+  { holeNum: "10", teepad: "Regular", par: 3, distance: "185 ft", sponsor: 'John Placeholder', title: 'Forget Yew' },
+  { holeNum: "11", teepad: "Regular", par: 3, distance: "227 ft", sponsor: 'John Placeholder', title: 'Front & Center' },
+  { holeNum: "12", teepad: "Regular", par: 3, distance: "322 ft", sponsor: 'John Placeholder', title: 'Stones Throw' },
+  { holeNum: "13", teepad: "Regular", par: 3, distance: "327 ft", sponsor: 'John Placeholder', title: 'Drop Zone' },
+  { holeNum: "14", teepad: "Regular", par: 3, distance: "227 ft", sponsor: 'John Placeholder', title: 'Dogleg to Nowhere' },
+  { holeNum: "14", teepad: "Long", par: 3, distance: "327 ft", sponsor: 'John Placeholder', title: 'Dogleg to Nowhere' },
+  { holeNum: "15", teepad: "Regular", par: 3, distance: "327 ft", sponsor: 'John Placeholder', title: 'Heart Attack and Vine' },
+  { holeNum: "16", teepad: "Regular", par: 3, distance: "248 ft", sponsor: 'John Placeholder', title: 'Down to the Glades' },
+  { holeNum: "17s", teepad: "Summer", par: 3, distance: "240 ft", sponsor: 'John Placeholder', title: 'Shut Up & Sweet Up' },
+  { holeNum: "17w", teepad: "Winter", par: 3, distance: "232 ft", sponsor: 'John Placeholder', title: 'Thru the Osage' },
+  { holeNum: "18s", teepad: "Summer", par: 3, distance: "200 ft", sponsor: 'John Placeholder', title: 'Yeah, Good Luck' },
+  { holeNum: "18w", teepad: "Winter", par: 3, distance: "232 ft", sponsor: 'John Placeholder', title: 'The Pool Hole' },
+  { holeNum: "19", teepad: "Summer", par: 3, distance: "233 ft", sponsor: 'John Placeholder', title: 'The Mole Hole' },
+  { holeNum: "19", teepad: "Winter", par: 4, distance: "314 ft", sponsor: 'John Placeholder', title: 'The Mole Hole' },
+  { holeNum: "20", teepad: "Regular", par: 4, distance: "240 ft", sponsor: 'John Placeholder', title: 'In the Pines' },
+]
+
+export { holes, holeInfo }
