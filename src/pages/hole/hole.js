@@ -27,30 +27,36 @@ const Hole = props => {
           </div>
 
           <div className="relative mx-auto lg:mx-0 max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0">
-            {curHoleIdx - 1 >= 0 && (
-              <div className="mt-4 invisible lg:visible">
-                <Link
-                  to={`/hole/${holes[curHoleIdx - 1]}`}
-                  className="text-base font-medium text-green-700 float-left"
-                  aria-current="page"
-                >
-                  <span aria-hidden="true">&larr;</span> Previous hole
-                </Link>
+            <div className="flex justify-between">
+              <div>
+                {curHoleIdx - 1 >= 0 && (
+                  <div className="mt-4">
+                    <Link
+                      to={`/hole/${holes[curHoleIdx - 1]}`}
+                      className="text-base font-medium text-green-700"
+                      aria-current="page"
+                    >
+                      <span aria-hidden="true">&larr;</span> Previous hole
+                    </Link>
+                  </div>
+                )}
               </div>
-            )}
-            {curHoleIdx + 1 < holes.length && (
-              <div className="mt-4 invisible lg:visible">
-                <Link
-                  to={`/hole/${holes[curHoleIdx + 1]}`}
-                  className="text-base font-medium text-green-700 float-right"
-                  aria-current="page"
-                >
-                  Next hole <span aria-hidden="true">&rarr;</span>{" "}
-                </Link>
+              <div>
+                {curHoleIdx + 1 < holes.length && (
+                  <div className="mt-4">
+                    <Link
+                      to={`/hole/${holes[curHoleIdx + 1]}`}
+                      className="text-base font-medium text-green-700"
+                      aria-current="page"
+                    >
+                      Next hole <span aria-hidden="true">&rarr;</span>{" "}
+                    </Link>
+                  </div>
+                )}
               </div>
-            )}
+            </div>
 
-            <div className="lg:pt-12 pt-4">
+            <div className="lg:pt-12 pt-8">
               <h2 className="text-4xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
                 {holeData[0]?.title || "Untitled"}
               </h2>
