@@ -8,7 +8,6 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-emotion`,
     "gatsby-plugin-postcss",
     {
       resolve: "gatsby-plugin-react-svg",
