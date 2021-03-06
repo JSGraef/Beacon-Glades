@@ -16,7 +16,8 @@
   "dependencies": {
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.27",
-    "autoprefixer": "^10.1.0",
+    "@tailwindcss/forms": "^0.2.1",
+    "autoprefixer": "^10.2.5",
     "gatsby": "^2.25.3",
     "gatsby-image": "^2.9.0",
     "gatsby-plugin-create-client-paths": "^2.3.13",
@@ -27,10 +28,10 @@
     "gatsby-plugin-sharp": "^2.12.2",
     "gatsby-source-filesystem": "^2.9.1",
     "gatsby-transformer-sharp": "^2.10.1",
-    "postcss": "^8.2.2",
+    "postcss": "^8.2.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
     "prettier": "2.1.2"
