@@ -1,3 +1,4 @@
+import { navigate } from "gatsby-link"
 import React from "react"
 import Layout from "../Layout.js"
 
@@ -17,6 +18,16 @@ export default function Information() {
                 className="font-medium text-green-600 hover:text-green-500"
               >
                 Facebook group!
+              </a>
+            </p>
+            <p className="mt-4 text-lg text-gray-500">
+              <a href="https://www.paypal.com/donate?business=donate%40beaconglades.com&item_name=Continued+support+for+Beacon+Glades&currency_code=USD">
+                <button
+                  type="button"
+                  class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                >
+                  Donate to the club
+                </button>
               </a>
             </p>
           </div>
