@@ -14,7 +14,7 @@ export default function Information() {
               Can’t find the answer you’re looking for? Join our{" "}
               <a
                 href="https://www.facebook.com/groups/537520126335222"
-                className="font-medium text-indigo-600 hover:text-indigo-500"
+                className="font-medium text-green-600 hover:text-green-500"
               >
                 Facebook group!
               </a>

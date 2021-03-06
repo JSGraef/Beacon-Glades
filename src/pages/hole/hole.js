@@ -81,7 +81,7 @@ const Hole = props => {
               <h2 className="text-4xl text-gray-900 font-extrabold tracking-tight sm:text-4xl">
                 {holeData[0]?.title || "Untitled"}
               </h2>
-              <h3 className="text-indigo-600 font-bold text-lg mt-1">
+              <h3 className="text-green-600 font-bold text-lg mt-1">
                 Sponsor: {holeData[0]?.sponsor || "N/A"}
               </h3>
             </div>
