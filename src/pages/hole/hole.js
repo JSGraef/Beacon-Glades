@@ -50,7 +50,7 @@ const Hole = props => {
                 <select
                   id="holes"
                   name="holes"
-                  className="mt-4 focus:pl-3 pr-10 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                  className="mt-4 focus:pl-3 text-base border-gray-300 focus:outline-none focus:ring-green-700 focus:border-green-700 sm:text-sm rounded-md"
                   value={holes[curHoleIdx]}
                   onChange={event => {
                     const holeIdx = holes.findIndex(value => event.target.value === value)
