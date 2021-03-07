@@ -1,9 +1,21 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
-import logo from "./images/beacon_glades_logo2021.jpg"
+import { Link, graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
-const Navigation = () => {
+const Navigation = props => {
   const [showMenu, setShowMenu] = useState(false)
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "beacon_glades_logo2021.jpg" }) {
+        childImageSharp {
+          fixed(width: 64) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+  console.log("Data", data)
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -14,7 +26,8 @@ const Navigation = () => {
           <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <Link to="/">
-                <img className="h-16 w-auto sm:h-16" src={logo} alt="Logo" />
+                {/* <img className="h-16 w-auto sm:h-16" src={logo} alt="Logo" /> */}
+                <Img className="h-16 w-auto sm:h-16"  fixed={data.file.childImageSharp.fixed} alt="Beacon Glades Logo" />
               </Link>
               <div className="-mr-2 flex items-center md:hidden">
                 <button
@@ -86,11 +99,11 @@ const Navigation = () => {
         </nav>
       </div>
       {showMenu && (
-        <div className="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+        <div className="z-50 absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
           <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
               <Link to="/">
-                <img className="h-16 w-auto sm:h-16" src={logo} alt="Logo" />
+                <Img className="h-16 w-auto sm:h-16"  fixed={data.file.childImageSharp.fixed} alt="Beacon Glades Logo" />
               </Link>
               <div className="-mr-2">
                 <button
@@ -108,9 +121,9 @@ const Navigation = () => {
                     aria-hidden="true"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
