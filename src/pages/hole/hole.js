@@ -1,41 +1,41 @@
 import React from "react"
 import Layout from "../../Layout.js"
 import { holes, holeInfo } from "../../constants.js"
-import { Link, navigate, useStaticQuery, graphql } from "gatsby"
+import { Link, navigate, graphql } from "gatsby"
 import HoleStat from "../../components/HoleStat"
 import Img from "gatsby-image"
 
 const getParamFromPathname = pathname =>
   pathname ? pathname.split("/").pop() : 1
 
-const Hole = props => {
-  const holeNum = getParamFromPathname(props?.location?.pathname)
-  const holeData = holeInfo.filter(info => info.holeNum === holeNum)
-  const curHoleIdx = holes.findIndex(value => holeNum === value)
-
-  const data = useStaticQuery(graphql`
-    {
-      allImageSharp {
-        edges {
-          node {
-            id
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+export const query = graphql`
+  {
+    allImageSharp {
+      edges {
+        node {
+          id
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
-  `)
+  }
+`
 
-  const currentHoleImages = data.allImageSharp.edges.filter(image => {
+const Hole = props => {
+  const holeNum = getParamFromPathname(props?.location?.pathname) || "1"
+  const holeData = holeInfo.filter(info => info.holeNum === holeNum)
+  const curHoleIdx = holes.findIndex(value => holeNum === value)
+
+  const currentHoleImages = props.data.allImageSharp.edges.filter(image => {
     const src = image.node.fluid.src
     const path = src.split("/")
-    const filename = path[path.length-1];
+    const filename = path[path.length - 1]
     return filename === `Hole${holeNum}.png`
   })
   const currentHoleImage = currentHoleImages?.[0]?.node.fluid || {}
-  
+
   return (
     <Layout>
       <div className="relative bg-white">
