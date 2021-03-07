@@ -43,7 +43,7 @@ const Hole = props => {
           <div className="relative">
             <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none">
               <div className="relative rounded-2xl shadow-xl overflow-hidden">
-                <Img fluid={currentHoleImage} alt="" />
+                <Img fluid={currentHoleImage} alt={`Hole ${holeNum} map`} />
               </div>
             </div>
           </div>

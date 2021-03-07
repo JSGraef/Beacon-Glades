@@ -1,11 +1,26 @@
 import React from "react"
 import Layout from "../Layout.js"
-import map from "../images/coursemap.jpg"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from 'gatsby-image'
+
 
 export default function CourseMap() {
+
+  const data = useStaticQuery(graphql`
+  query {
+    file(relativePath: { eq: "coursemap.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`)
+
   return (
     <Layout>
-      <img src={map} alt="Course Map" />
+      <Img fluid={data.file.childImageSharp.fluid} alt="Course Map" />
     </Layout>
   )
 }
