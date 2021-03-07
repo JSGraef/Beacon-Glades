@@ -1,4 +1,3 @@
-import { navigate } from "gatsby-link"
 import React from "react"
 import Layout from "../Layout.js"
 

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-const Navigation = props => {
+const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false)
   const data = useStaticQuery(graphql`
     query {
@@ -26,7 +26,6 @@ const Navigation = props => {
           <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <Link to="/">
-                {/* <img className="h-16 w-auto sm:h-16" src={logo} alt="Logo" /> */}
                 <Img className="h-16 w-auto sm:h-16"  fixed={data.file.childImageSharp.fixed} alt="Beacon Glades Logo" />
               </Link>
               <div className="-mr-2 flex items-center md:hidden">
