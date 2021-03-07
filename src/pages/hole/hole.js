@@ -1,9 +1,9 @@
 import React from "react"
-import HoleMap from "../../HoleMap.js"
 import Layout from "../../Layout.js"
 import { holes, holeInfo } from "../../constants.js"
-import { Link, navigate } from "gatsby"
+import { Link, navigate, useStaticQuery, graphql } from "gatsby"
 import HoleStat from "../../components/HoleStat"
+import Img from "gatsby-image"
 
 const getParamFromPathname = pathname =>
   pathname ? pathname.split("/").pop() : 1
@@ -13,6 +13,28 @@ const Hole = props => {
   const holeData = holeInfo.filter(info => info.holeNum === holeNum)
   const curHoleIdx = holes.findIndex(value => holeNum === value)
 
+  const data = useStaticQuery(graphql`
+    {
+      allImageSharp {
+        edges {
+          node {
+            id
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const currentHoleImage = data.allImageSharp.edges.filter(image => {
+    const src = image.node.fluid.src
+    const path = src.split("/")
+    const filename = path[path.length-1];
+    return filename === `Hole${holeNum}.png`
+  })
+  
   return (
     <Layout>
       <div className="relative bg-white">
@@ -20,7 +42,7 @@ const Hole = props => {
           <div className="relative">
             <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none">
               <div className="relative rounded-2xl shadow-xl overflow-hidden">
-                <HoleMap holeNumber={holeNum} />
+                <Img fluid={currentHoleImage[0].node.fluid} alt="" />
               </div>
             </div>
           </div>
@@ -53,7 +75,9 @@ const Hole = props => {
                   className="mt-4 focus:pl-3 text-base border-gray-300 focus:outline-none focus:ring-green-700 focus:border-green-700 sm:text-sm rounded-md"
                   value={holes[curHoleIdx]}
                   onChange={event => {
-                    const holeIdx = holes.findIndex(value => event.target.value === value)
+                    const holeIdx = holes.findIndex(
+                      value => event.target.value === value
+                    )
                     navigate(`/hole/${holes[holeIdx]}`)
                   }}
                 >
