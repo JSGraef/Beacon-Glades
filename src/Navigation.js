@@ -1,21 +1,10 @@
 import React, { useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { Link } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Navigation = () => {
   const [showMenu, setShowMenu] = useState(false)
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "beacon_glades_logo2021.jpg" }) {
-        childImageSharp {
-          fixed(width: 64) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `)
-  
+
   return (
     <>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -26,7 +15,14 @@ const Navigation = () => {
           <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <Link to="/">
-                <Img className="h-16 w-auto sm:h-16"  fixed={data.file.childImageSharp.fixed} alt="Beacon Glades Logo" />
+                <StaticImage
+                  src="./images/beacon_glades_logo2021.jpg"
+                  className="h-16 w-auto sm:h-16"
+                  alt="Beacon Glades Logo"
+                  layout="fixed"
+                  width={75}
+                  height={75}
+                />
               </Link>
               <div className="-mr-2 flex items-center md:hidden">
                 <button
@@ -102,7 +98,14 @@ const Navigation = () => {
           <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div className="px-5 pt-4 flex items-center justify-between">
               <Link to="/">
-                <Img className="h-16 w-auto sm:h-16"  fixed={data.file.childImageSharp.fixed} alt="Beacon Glades Logo" />
+              <StaticImage
+                  src="./images/beacon_glades_logo2021.jpg"
+                  className="h-16 w-auto sm:h-16"
+                  alt="Beacon Glades Logo"
+                  layout="fixed"
+                  width={75}
+                  height={75}
+                />
               </Link>
               <div className="-mr-2">
                 <button

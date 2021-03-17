@@ -3,7 +3,7 @@ import Layout from "../../Layout.js"
 import { holes, holeInfo } from "../../constants.js"
 import { Link, navigate, graphql } from "gatsby"
 import HoleStat from "../../components/HoleStat"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const getParamFromPathname = pathname =>
   pathname ? pathname.split("/").pop() : 1
@@ -14,9 +14,7 @@ export const query = graphql`
       edges {
         node {
           id
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
     }
@@ -29,12 +27,12 @@ const Hole = props => {
   const curHoleIdx = holes.findIndex(value => holeNum === value)
 
   const currentHoleImages = props.data.allImageSharp.edges.filter(image => {
-    const src = image.node.fluid.src
-    const path = src.split("/")
-    const filename = path[path.length - 1]
+    const src = image?.node?.gatsbyImageData?.images?.fallback?.src
+    const path = src?.split("/")
+    const filename = path?.[path.length - 1]
     return filename === `Hole${holeNum}.png`
   })
-  const currentHoleImage = currentHoleImages?.[0]?.node.fluid || {}
+  const currentHoleImage = currentHoleImages?.[0]?.node.gatsbyImageData || {}
 
   return (
     <Layout>
@@ -43,7 +41,10 @@ const Hole = props => {
           <div className="relative">
             <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none">
               <div className="relative rounded-2xl shadow-xl overflow-hidden">
-                <Img fluid={currentHoleImage} alt={`Hole ${holeNum} map`} />
+                <GatsbyImage
+                  image={currentHoleImage}
+                  alt={`Hole ${holeNum} map`}
+                />
               </div>
             </div>
           </div>
